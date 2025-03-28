@@ -26,7 +26,7 @@ cors_domains =
 [history]
 
 [file_manager]
-enable_object_processing = true
+enable_object_processing = True
 
 [update_manager]
 channel = dev
@@ -73,4 +73,30 @@ path = ~/klipper-backup
 origin = https://github.com/Staubgeborener/klipper-backup.git
 managed_services = moonraker
 primary_branch = main
+
+[update_manager klipper_tmc_autotune]
+type = git_repo
+channel = dev
+path = ~/klipper_tmc_autotune
+origin = https://github.com/andrewmcgr/klipper_tmc_autotune.git
+managed_services = klipper
+primary_branch = main
+install_script = install.sh
+
+[update_manager octoeverywhere]
+type = git_repo
+channel = beta
+path = /home/mercury/octoeverywhere
+origin = https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere.git
+env = /home/mercury/octoeverywhere-env/bin/python
+requirements = requirements.txt
+install_script = install.sh
+managed_services = 
+	octoeverywhere
+
+[announcements]
+subscriptions = 
+	octoeverywhere
+
+[simplyprint]
 
